@@ -113,7 +113,7 @@ let LCD = class LCD {
         this.write(this.ENTRYMODESET | this.ENTRYLEFT, this.displayPorts.CMD); //shift cursor right
         this._sleep(10);
         this.write(this.CLEARDISPLAY, this.displayPorts.CMD); // LCD clear
-        this.write(this.displayPorts.backlight, this.displayPorts.CHR); //Turn on backlight.
+        this.write(this.displayPorts.backlight, this.displayPorts.CMD); //Turn on backlight.
 
         return this;
     };
