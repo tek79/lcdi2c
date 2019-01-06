@@ -94,16 +94,19 @@ let LCD = class LCD {
 
         this._sleep(1000);
 
-        this.write4(0x33, this.displayPorts.CMD); //initialization
+        //this.write4(0x33, this.displayPorts.CMD); //initialization
+        this.write4(0x30, this.displayPorts.CMD); //initialization
         this._sleep(200);
-        this.write4(0x32, this.displayPorts.CMD); //initialization
+        //this.write4(0x32, this.displayPorts.CMD); //initialization
+        this.write4(0x30, this.displayPorts.CMD); //initialization
         this._sleep(100);
-        this.write4(0x06, this.displayPorts.CMD); //initialization
+        //this.write4(0x06, this.displayPorts.CMD); //initialization
+        this.write4(0x30, this.displayPorts.CMD); //initialization
         this._sleep(100);
-        this.write4(0x28, this.displayPorts.CMD); //initialization
-        this._sleep(100);
-        this.write4(0x01, this.displayPorts.CMD); //initialization
-        this._sleep(100);
+        //this.write4(0x28, this.displayPorts.CMD); //initialization
+        //this._sleep(100);
+        //this.write4(0x01, this.displayPorts.CMD); //initialization
+        //this._sleep(100);
 
         this.write4(this.FUNCTIONSET | this._4BITMODE | this._2LINE | this._5x10DOTS, this.displayPorts.CMD); //4 bit - 2 line 5x7 matrix
 
@@ -113,7 +116,7 @@ let LCD = class LCD {
         this.write(this.ENTRYMODESET | this.ENTRYLEFT, this.displayPorts.CMD); //shift cursor right
         this._sleep(10);
         this.write(this.CLEARDISPLAY, this.displayPorts.CMD); // LCD clear
-        this.write(this.displayPorts.backlight, this.displayPorts.CMD); //Turn on backlight.
+        //this.write(this.displayPorts.backlight, this.displayPorts.CMD); //Turn on backlight.
 
         return this;
     };
